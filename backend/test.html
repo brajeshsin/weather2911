@@ -1,0 +1,27 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Test</title>
+  </head>
+  <body>
+    <h2>Weather App</h2>
+    <script>
+      const ws = new WebSocket("ws://localhost:5000");
+
+      ws.onopen = () => console.log("✅ WebSocket connected");
+
+      ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log("📦 Weather data received:", data);
+      };
+
+      ws.onerror = (err) => {
+        console.error("❌ Error:", err);
+      };
+
+      ws.onclose = () => {
+        console.log("🔌 WebSocket closed");
+      };
+    </script>
+  </body>
+</html> -->
