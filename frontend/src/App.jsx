@@ -23,10 +23,10 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
-    // socketRef.current = new WebSocket("ws://localhost:5000");
+    socketRef.current = new WebSocket("ws://localhost:5000");
 
     // socketRef.current = new WebSocket("wss://weather-backend-gmp7.onrender.com");
-    socketRef.current = new WebSocket(import.meta.env.VITE_WS_URL);
+    // socketRef.current = new WebSocket(import.meta.env.VITE_WS_URL);
 
 
     socketRef.current.onmessage = (event) => {
