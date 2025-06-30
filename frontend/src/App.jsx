@@ -23,7 +23,9 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
-    socketRef.current = new WebSocket("ws://localhost:5000");
+    // socketRef.current = new WebSocket("ws://localhost:5000");
+
+    socketRef.current = new WebSocket("wss://weather-backend-gmp7.onrender.com");
 
     socketRef.current.onmessage = (event) => {
       const data = JSON.parse(event.data);
