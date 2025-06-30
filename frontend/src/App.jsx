@@ -16,7 +16,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [current, setCurrent] = useState({
     forecast: [],
-    historyOptions: ["Past 1 Hour", "Past 5 Hours", "Past 1 Day", "Custom"],
+    historyOptions: ["Past 1 Hour", "Past 5 Hours", "Past 1 Day"],
   });
 
   const socketRef = useRef(null);
@@ -107,7 +107,7 @@ const App = () => {
         />
         <button
           type="submit"
-          className="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md"
+          className="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-md cursor-pointer"
         >
           Get Weather
         </button>
@@ -197,7 +197,7 @@ const App = () => {
               <button
                 key={i}
                 onClick={() => handleDownload(opt)}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow transition"
+                className="bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-4 py-2 rounded-md shadow transition"
               >
                 {opt}
               </button>
