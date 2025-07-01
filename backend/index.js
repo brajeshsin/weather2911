@@ -9,7 +9,6 @@ const app = express();
 // const PORT = 5000;
 const PORT = process.env.PORT || 5000;
 
-
 app.use(cors());
 app.use(express.json());
 
@@ -140,3 +139,4 @@ const broadcastWeatherData = async () => {
 
 // Broadcast every 20 seconds
 setInterval(broadcastWeatherData, 20000);
+// setInterval(broadcastWeatherData, 30 * 60 * 1000); // 30 minutes

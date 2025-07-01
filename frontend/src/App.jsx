@@ -23,11 +23,12 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
-    socketRef.current = new WebSocket("ws://localhost:5000");
+    // socketRef.current = new WebSocket("ws://localhost:5000");
 
-    // socketRef.current = new WebSocket("wss://weather-backend-gmp7.onrender.com");
+    socketRef.current = new WebSocket(
+      "wss://weather-backend-gmp7.onrender.com"
+    );
     // socketRef.current = new WebSocket(import.meta.env.VITE_WS_URL);
-
 
     socketRef.current.onmessage = (event) => {
       const data = JSON.parse(event.data);
@@ -93,8 +94,8 @@ const App = () => {
     <div className="min-h-screen bg-blue-950 text-white p-6 flex flex-col gap-8 relative">
       {loading && (
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center z-50">
-         <Loader/>
-         <p className="text-2xl mt-4">Getting data please wait...</p>
+          <Loader />
+          <p className="text-2xl mt-4">Getting data please wait...</p>
         </div>
       )}
 
